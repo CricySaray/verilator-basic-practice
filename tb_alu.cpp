@@ -1,12 +1,13 @@
 // Verilator Example
 // Norbertas Kremeris 2021
+#include <ostream>
 #include <stdlib.h>
 #include <cstdlib>
 #include <iostream>
 #include <verilated.h>
 #include <verilated_vcd_c.h>
 #include "obj_dir/Valu.h"
-//#include "obj_dir/Valu___024unit.h"
+#include "obj_dir/Valu___024unit.h"
 
 #define MAX_SIM_TIME 300
 vluint64_t sim_time = 0;
@@ -76,7 +77,33 @@ int main(int argc, char** argv, char** env) {
 
 		if (dut->clk == 1){
 			posedge_cnt++;
-			set_rnd_out_valid(dut, sim_time);
+			dut->in_valid = 0;
+			switch(posedge_cnt){
+				case 10:
+					dut->in_valid = 1;
+					dut->a_in = 5;
+					dut->b_in = 3;
+					dut->op_in = Valu___024unit::operation_t::add;
+					break;
+
+				case 12:
+					if (dut->out != 8)
+						std::cout << "Addition failed @ " << sim_time << std::endl;
+					break;
+
+				case 20:
+					dut->in_valid = 1;
+					dut->a_in = 5;
+					dut->b_in = 3;
+					dut->op_in = Valu___024unit::operation_t::sub;
+					break;
+
+				case 22:
+					if (dut->out != 2)
+						std::cout << "Subtraction failed @ " << sim_time << std::endl;
+					break;
+
+			}
 			check_out_valid(dut, sim_time);
 		}
 

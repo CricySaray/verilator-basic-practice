@@ -13,7 +13,7 @@ build: obj_dir/Valu
 waves: waveform.vcd
 	@echo
 	@echo "### WAVES ###"
-	gtkwave waveform.vcd
+	$(GTKWAVE_PATH) waveform.vcd &
 
 waveform.vcd: ./obj_dir/V$(MODULE)
 	@echo
