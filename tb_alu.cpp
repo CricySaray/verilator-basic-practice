@@ -5,8 +5,8 @@
 #include <iostream>
 #include <verilated.h>
 #include <verilated_vcd_c.h>
-#include "Valu.h"
-#include "Valu___024unit.h"
+#include "obj_dir/Valu.h"
+//#include "obj_dir/Valu___024unit.h"
 
 #define MAX_SIM_TIME 300
 vluint64_t sim_time = 0;
@@ -16,10 +16,10 @@ vluint64_t posedge_cnt = 0;
 void dut_reset (Valu *dut, vluint64_t &sim_time){
 	dut->rst = 0;
 	if (sim_time >= 3 && sim_time < 6){
-		dut->rst = 1;
-		dut->a_in = 0;
-		dut->b_in = 0;
-		dut->op_in = 0;
+		dut->rst      = 1;
+		dut->a_in     = 0;
+		dut->b_in     = 0;
+		dut->op_in    = 0;
 		dut->in_valid = 0;
 	}
 }
@@ -27,15 +27,15 @@ void dut_reset (Valu *dut, vluint64_t &sim_time){
 // function to check out_valid
 #define VERIF_START_TIME 7
 void check_out_valid(Valu *dut, vluint64_t &sim_time){
-	static unsigned char in_valid = 0;
-	static unsigned char in_valid_d = 0;
+	static unsigned char in_valid      = 0;
+	static unsigned char in_valid_d    = 0;
 	static unsigned char out_valid_exp = 0;
 
 	if (sim_time >= VERIF_START_TIME) {
 		// note the order!
 		out_valid_exp = in_valid_d;
-		in_valid_d = in_valid;
-		in_valid = dut->in_valid;
+		in_valid_d    = in_valid;
+		in_valid      = dut->in_valid;
 		if (out_valid_exp != dut->out_valid) {
 			std::cout << "ERROR: out_valid mismatch, "
 				<< "exp: " << (int)(out_valid_exp)

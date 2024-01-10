@@ -10,11 +10,15 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
 **/target	.vscode/settings.json	/^        "**\/target": true$/;"	b	object:files.watcherExclude
+./obj_dir/V$(MODULE)	Makefile	/^.\/obj_dir\/V$(MODULE): .stamp.verilate$/;"	t
+.stamp.verilate	Makefile	/^.stamp.verilate: $(MODULE).sv tb_$(MODULE).cpp$/;"	t
 MAX_SIM_TIME	tb_alu.cpp	/^#define MAX_SIM_TIME /;"	d	file:
+MODULE	Makefile	/^MODULE=alu$/;"	m
 PERL	obj_dir/Valu.mk	/^PERL = perl$/;"	m
 SYSTEMC_INCLUDE	obj_dir/Valu.mk	/^SYSTEMC_INCLUDE ?= $/;"	m
 SYSTEMC_LIBDIR	obj_dir/Valu.mk	/^SYSTEMC_LIBDIR ?= $/;"	m
 TOP	obj_dir/Valu__Syms.h	/^    Valu___024root                 TOP;$/;"	m	class:Valu__Syms	typeref:typename:Valu___024root
+VERIF_START_TIME	tb_alu.cpp	/^#define VERIF_START_TIME /;"	d	file:
 VERILATED_VALU_H_	obj_dir/Valu.h	/^#define VERILATED_VALU_H_ /;"	d
 VERILATED_VALU__SYMS_H_	obj_dir/Valu__Syms.h	/^#define VERILATED_VALU__SYMS_H_ /;"	d
 VERILATED_VALU___024ROOT_H_	obj_dir/Valu___024root.h	/^#define VERILATED_VALU___024ROOT_H_ /;"	d
@@ -24,6 +28,7 @@ VL_ATTR_ALIGNED	obj_dir/Valu.h	/^} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);$/;"	v	t
 VL_ATTR_ALIGNED	obj_dir/Valu__Syms.h	/^} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);$/;"	v	typeref:class:Valu__Syms
 VL_ATTR_ALIGNED	obj_dir/Valu___024root.h	/^} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);$/;"	v	typeref:class:Valu___024root
 VL_ATTR_ALIGNED	obj_dir/Valu___024unit.h	/^} VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);$/;"	v	typeref:class:Valu___024unit
+VL_INCLUDE_OPT	obj_dir/Valu__ALL.cpp	/^#define VL_INCLUDE_OPT /;"	d	file:
 VL_NOT_FINAL	obj_dir/Valu.h	/^class Valu VL_NOT_FINAL : public VerilatedModel {$/;"	c
 VM_C11	obj_dir/Valu_classes.mk	/^VM_C11 = 1$/;"	m
 VM_COVERAGE	obj_dir/Valu_classes.mk	/^VM_COVERAGE = 0$/;"	m
@@ -36,15 +41,16 @@ VM_SC	obj_dir/Valu.mk	/^VM_SC = 0$/;"	m
 VM_SC_TARGET_ARCH	obj_dir/Valu.mk	/^VM_SC_TARGET_ARCH = linux$/;"	m
 VM_SP_OR_SC	obj_dir/Valu.mk	/^VM_SP_OR_SC = $(VM_SC)$/;"	m
 VM_TIMING	obj_dir/Valu_classes.mk	/^VM_TIMING = 0$/;"	m
-VM_TRACE	obj_dir/Valu_classes.mk	/^VM_TRACE = 0$/;"	m
+VM_TRACE	obj_dir/Valu_classes.mk	/^VM_TRACE = 1$/;"	m
 VM_TRACE_FST	obj_dir/Valu_classes.mk	/^VM_TRACE_FST = 0$/;"	m
-VM_TRACE_VCD	obj_dir/Valu_classes.mk	/^VM_TRACE_VCD = 0$/;"	m
+VM_TRACE_VCD	obj_dir/Valu_classes.mk	/^VM_TRACE_VCD = 1$/;"	m
 VM_USER_CFLAGS	obj_dir/Valu.mk	/^VM_USER_CFLAGS = \\$/;"	m
 VM_USER_CLASSES	obj_dir/Valu.mk	/^VM_USER_CLASSES = \\$/;"	m
 VM_USER_DIR	obj_dir/Valu.mk	/^VM_USER_DIR = \\$/;"	m
 VM_USER_LDLIBS	obj_dir/Valu.mk	/^VM_USER_LDLIBS = \\$/;"	m
 Valu	obj_dir/Valu.cpp	/^Valu::Valu(VerilatedContext* _vcontextp__, const char* _vcname__)$/;"	f	class:Valu
 Valu	obj_dir/Valu.cpp	/^Valu::Valu(const char* _vcname__)$/;"	f	class:Valu
+Valu	obj_dir/Valu.mk	/^Valu: $(VK_USER_OBJS) $(VK_GLOBAL_OBJS) $(VM_PREFIX)__ALL.a $(VM_HIER_LIBS)$/;"	t
 Valu__Syms	obj_dir/Valu__Syms.cpp	/^Valu__Syms::Valu__Syms(VerilatedContext* contextp, const char* namep, Valu* modelp)$/;"	f	class:Valu__Syms
 Valu__Syms	obj_dir/Valu__Syms.h	/^class Valu__Syms final : public VerilatedSyms {$/;"	c
 Valu___024root	obj_dir/Valu___024root.h	/^class Valu___024root final : public VerilatedModule {$/;"	c
@@ -66,6 +72,14 @@ Valu___024root___eval_triggers__act	obj_dir/Valu___024root__DepSet_h7172bd91__0.
 Valu___024root___eval_triggers__stl	obj_dir/Valu___024root__DepSet_h7172bd91__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root___eval_triggers__stl(Valu___024root* vlSelf) {$/;"	f	typeref:typename:VL_ATTR_COLD void
 Valu___024root___nba_sequent__TOP__0	obj_dir/Valu___024root__DepSet_ha59b247d__0.cpp	/^VL_INLINE_OPT void Valu___024root___nba_sequent__TOP__0(Valu___024root* vlSelf) {$/;"	f	typeref:typename:VL_INLINE_OPT void
 Valu___024root___stl_sequent__TOP__0	obj_dir/Valu___024root__DepSet_ha59b247d__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root___stl_sequent__TOP__0(Valu___024root* vlSelf) {$/;"	f	typeref:typename:VL_ATTR_COLD void
+Valu___024root__trace_chg_sub_0	obj_dir/Valu__Trace__0.cpp	/^void Valu___024root__trace_chg_sub_0(Valu___024root* vlSelf, VerilatedVcd::Buffer* bufp) {$/;"	f	typeref:typename:void
+Valu___024root__trace_chg_top_0	obj_dir/Valu__Trace__0.cpp	/^void Valu___024root__trace_chg_top_0(void* voidSelf, VerilatedVcd::Buffer* bufp) {$/;"	f	typeref:typename:void
+Valu___024root__trace_cleanup	obj_dir/Valu__Trace__0.cpp	/^void Valu___024root__trace_cleanup(void* voidSelf, VerilatedVcd* \/*unused*\/) {$/;"	f	typeref:typename:void
+Valu___024root__trace_full_sub_0	obj_dir/Valu__Trace__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root__trace_full_sub_0(Valu___024root* vlSelf, VerilatedVcd::Buffer*/;"	f	typeref:typename:VL_ATTR_COLD void
+Valu___024root__trace_full_top_0	obj_dir/Valu__Trace__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root__trace_full_top_0(void* voidSelf, VerilatedVcd::Buffer* bufp) {$/;"	f	typeref:typename:VL_ATTR_COLD void
+Valu___024root__trace_init_sub__TOP__0	obj_dir/Valu__Trace__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root__trace_init_sub__TOP__0(Valu___024root* vlSelf, VerilatedVcd* t/;"	f	typeref:typename:VL_ATTR_COLD void
+Valu___024root__trace_init_top	obj_dir/Valu__Trace__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root__trace_init_top(Valu___024root* vlSelf, VerilatedVcd* tracep) {$/;"	f	typeref:typename:VL_ATTR_COLD void
+Valu___024root__trace_register	obj_dir/Valu__Trace__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024root__trace_register(Valu___024root* vlSelf, VerilatedVcd* tracep) {$/;"	f	typeref:typename:VL_ATTR_COLD void
 Valu___024unit	obj_dir/Valu___024unit.h	/^class Valu___024unit final : public VerilatedModule {$/;"	c
 Valu___024unit	obj_dir/Valu___024unit__Slow.cpp	/^Valu___024unit::Valu___024unit(Valu__Syms* symsp, const char* v__name)$/;"	f	class:Valu___024unit
 Valu___024unit___ctor_var_reset	obj_dir/Valu___024unit__DepSet_h45503383__0__Slow.cpp	/^VL_ATTR_COLD void Valu___024unit___ctor_var_reset(Valu___024unit* vlSelf) {$/;"	f	typeref:typename:VL_ATTR_COLD void
@@ -77,9 +91,12 @@ __VactIterCount	obj_dir/Valu___024root.h	/^    IData\/*31:0*\/ __VactIterCount;$
 __VactTriggered	obj_dir/Valu___024root.h	/^    VlTriggerVec<1> __VactTriggered;$/;"	m	class:Valu___024root	typeref:typename:VlTriggerVec<1>
 __Vconfigure	obj_dir/Valu___024root__Slow.cpp	/^void Valu___024root::__Vconfigure(bool first) {$/;"	f	class:Valu___024root	typeref:typename:void
 __Vconfigure	obj_dir/Valu___024unit__Slow.cpp	/^void Valu___024unit::__Vconfigure(bool first) {$/;"	f	class:Valu___024unit	typeref:typename:void
+__Vm_activity	obj_dir/Valu__Syms.h	/^    bool __Vm_activity = false;  \/\/\/< Used by trace routines to determine change occurred$/;"	m	class:Valu__Syms	typeref:typename:bool
+__Vm_baseCode	obj_dir/Valu__Syms.h	/^    uint32_t __Vm_baseCode = 0;  \/\/\/< Used by trace routines when tracing multiple models$/;"	m	class:Valu__Syms	typeref:typename:uint32_t
 __Vm_deleter	obj_dir/Valu__Syms.h	/^    VlDeleter __Vm_deleter;$/;"	m	class:Valu__Syms	typeref:typename:VlDeleter
 __Vm_didInit	obj_dir/Valu__Syms.h	/^    bool __Vm_didInit = false;$/;"	m	class:Valu__Syms	typeref:typename:bool
 __Vm_modelp	obj_dir/Valu__Syms.h	/^    Valu* const __Vm_modelp;$/;"	m	class:Valu__Syms	typeref:typename:Valu * const
+__Vm_traceActivity	obj_dir/Valu___024root.h	/^    VlUnpacked<CData\/*0:0*\/, 2> __Vm_traceActivity;$/;"	m	class:Valu___024root	typeref:typename:VlUnpacked<CData,2>
 __VnbaTriggered	obj_dir/Valu___024root.h	/^    VlTriggerVec<1> __VnbaTriggered;$/;"	m	class:Valu___024root	typeref:typename:VlTriggerVec<1>
 __VstlIterCount	obj_dir/Valu___024root.h	/^    IData\/*31:0*\/ __VstlIterCount;$/;"	m	class:Valu___024root	typeref:typename:IData
 __VstlTriggered	obj_dir/Valu___024root.h	/^    VlTriggerVec<1> __VstlTriggered;$/;"	m	class:Valu___024root	typeref:typename:VlTriggerVec<1>
@@ -97,8 +114,12 @@ alu__DOT__op_in_r	obj_dir/Valu___024root.h	/^    CData\/*1:0*\/ alu__DOT__op_in_
 alu__DOT__result	obj_dir/Valu___024root.h	/^    CData\/*5:0*\/ alu__DOT__result;$/;"	m	class:Valu___024root	typeref:typename:CData
 b_in	alu.sv	/^		input  [WIDTH-1:0]  b_in,$/;"	p	module:alu
 b_in_r	alu.sv	/^	logic  [WIDTH-1:0]  b_in_r;$/;"	r	module:alu
+build	Makefile	/^build: obj_dir\/Valu$/;"	t
+check_out_valid	tb_alu.cpp	/^void check_out_valid(Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
+clean	Makefile	/^clean:$/;"	t
 clk	alu.sv	/^		input clk,$/;"	p	module:alu
-default	obj_dir/Valu.mk	/^default: Valu__ALL.a$/;"	t
+default	obj_dir/Valu.mk	/^default: Valu$/;"	t
+dut_reset	tb_alu.cpp	/^void dut_reset (Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
 eval	obj_dir/Valu.h	/^    void eval() { eval_step(); }$/;"	f	class:VL_NOT_FINAL	typeref:typename:void
 eval_end_step	obj_dir/Valu.h	/^    void eval_end_step() {}$/;"	f	class:VL_NOT_FINAL	typeref:typename:void
 eval_step	obj_dir/Valu.cpp	/^void Valu::eval_step() {$/;"	f	class:Valu	typeref:typename:void
@@ -108,6 +129,7 @@ final	obj_dir/Valu.cpp	/^VL_ATTR_COLD void Valu::final() {$/;"	f	class:Valu	type
 hierName	obj_dir/Valu.cpp	/^const char* Valu::hierName() const { return vlSymsp->name(); }$/;"	f	class:Valu	typeref:typename:const char *
 in_valid	alu.sv	/^		input               in_valid,$/;"	p	module:alu
 in_valid_r	alu.sv	/^	logic               in_valid_r;$/;"	r	module:alu
+lint	Makefile	/^lint: $(MODULE).sv$/;"	t
 main	tb_alu.cpp	/^int main(int argc, char** argv, char** env) {$/;"	f	typeref:typename:int
 modelName	obj_dir/Valu.cpp	/^const char* Valu::modelName() const { return "Valu"; }$/;"	f	class:Valu	typeref:typename:const char *
 name	obj_dir/Valu.cpp	/^const char* Valu::name() const {$/;"	f	class:Valu	typeref:typename:const char *
@@ -121,17 +143,27 @@ operation_t	alu.sv	/^	} operation_t \/*verilator public*\/;$/;"	T
 operation_t	obj_dir/Valu___024unit.h	/^    enum operation_t {$/;"	g	class:Valu___024unit
 out	alu.sv	/^		output logic [WIDTH-1:0]  out,$/;"	p	module:alu
 out_valid	alu.sv	/^		output logic              out_valid$/;"	p	module:alu
+posedge_cnt	tb_alu.cpp	/^vluint64_t posedge_cnt = 0;$/;"	v	typeref:typename:vluint64_t
 result	alu.sv	/^	logic  [WIDTH-1:0]  result;$/;"	r	module:alu
 rootp	obj_dir/Valu.h	/^    Valu___024root* const rootp;$/;"	m	class:VL_NOT_FINAL	typeref:typename:Valu___024root * const
 rst	alu.sv	/^		input rst,$/;"	p	module:alu
+set_rnd_out_valid	tb_alu.cpp	/^void set_rnd_out_valid(Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
+sim	Makefile	/^sim: waveform.vcd$/;"	t
 sim_time	tb_alu.cpp	/^vluint64_t sim_time = 0;$/;"	v	typeref:typename:vluint64_t
 sub	alu.sv	/^		sub     = 2'h2,$/;"	c	typedef:operation_t
 sub	obj_dir/Valu___024unit.h	/^        sub = 2U,$/;"	e	enum:Valu___024unit::operation_t
+tb_alu.o	obj_dir/Valu.mk	/^tb_alu.o: tb_alu.cpp$/;"	t
 threads	obj_dir/Valu.cpp	/^unsigned Valu::threads() const { return 1; }$/;"	f	class:Valu	typeref:typename:unsigned
+trace	obj_dir/Valu.cpp	/^VL_ATTR_COLD void Valu::trace(VerilatedVcdC* tfp, int levels, int options) {$/;"	f	class:Valu	typeref:typename:VL_ATTR_COLD void
+traceConfig	obj_dir/Valu.cpp	/^std::unique_ptr<VerilatedTraceConfig> Valu::traceConfig() const {$/;"	f	class:Valu	typeref:typename:std::unique_ptr<VerilatedTraceConfig>
+trace_init	obj_dir/Valu.cpp	/^VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32_t code) {$/;"	f	typeref:typename:VL_ATTR_COLD void	file:
+verilate	Makefile	/^verilate: .stamp.verilate$/;"	t
 verilator_basics	README.md	/^# verilator_basics$/;"	c
 vlSymsp	obj_dir/Valu.h	/^    Valu__Syms* const vlSymsp;$/;"	m	class:VL_NOT_FINAL	typeref:typename:Valu__Syms * const
 vlSymsp	obj_dir/Valu___024root.h	/^    Valu__Syms* const vlSymsp;$/;"	m	class:Valu___024root	typeref:typename:Valu__Syms * const
 vlSymsp	obj_dir/Valu___024unit.h	/^    Valu__Syms* const vlSymsp;$/;"	m	class:Valu___024unit	typeref:typename:Valu__Syms * const
+waveform.vcd	Makefile	/^waveform.vcd: .\/obj_dir\/V$(MODULE)$/;"	t
+waves	Makefile	/^waves: waveform.vcd$/;"	t
 ~Valu	obj_dir/Valu.cpp	/^Valu::~Valu() {$/;"	f	class:Valu
 ~Valu__Syms	obj_dir/Valu__Syms.cpp	/^Valu__Syms::~Valu__Syms()$/;"	f	class:Valu__Syms
 ~Valu___024root	obj_dir/Valu___024root__Slow.cpp	/^Valu___024root::~Valu___024root() {$/;"	f	class:Valu___024root
