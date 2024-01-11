@@ -12,8 +12,18 @@
 **/target	.vscode/settings.json	/^        "**\/target": true$/;"	b	object:files.watcherExclude
 ./obj_dir/V$(MODULE)	Makefile	/^.\/obj_dir\/V$(MODULE): .stamp.verilate$/;"	t
 .stamp.verilate	Makefile	/^.stamp.verilate: $(MODULE).sv tb_$(MODULE).cpp$/;"	t
+AluInDrv	tb_alu.cpp	/^		AluInDrv(Valu *dut){ \/\/ set a Valu pointer to initiate the DUT$/;"	f	class:AluInDrv	file:
+AluInDrv	tb_alu.cpp	/^class AluInDrv {$/;"	c	file:
+AluInMon	tb_alu.cpp	/^		AluInMon(Valu *dut, AluScb *scb){$/;"	f	class:AluInMon	file:
+AluInMon	tb_alu.cpp	/^class AluInMon {$/;"	c	file:
+AluInTx	tb_alu.cpp	/^class AluInTx {$/;"	c	file:
+AluOutMon	tb_alu.cpp	/^		AluOutMon(Valu *dut, AluScb *scb){$/;"	f	class:AluOutMon	file:
+AluOutMon	tb_alu.cpp	/^class AluOutMon {$/;"	c	file:
+AluOutTx	tb_alu.cpp	/^class AluOutTx {$/;"	c	file:
+AluScb	tb_alu.cpp	/^class AluScb { \/\/ wait to complete$/;"	c	file:
 MAX_SIM_TIME	tb_alu.cpp	/^#define MAX_SIM_TIME /;"	d	file:
 MODULE	Makefile	/^MODULE=alu$/;"	m
+Operation	tb_alu.cpp	/^		enum Operation {$/;"	g	class:AluInTx	file:
 PERL	obj_dir/Valu.mk	/^PERL = perl$/;"	m
 SYSTEMC_INCLUDE	obj_dir/Valu.mk	/^SYSTEMC_INCLUDE ?= $/;"	m
 SYSTEMC_LIBDIR	obj_dir/Valu.mk	/^SYSTEMC_LIBDIR ?= $/;"	m
@@ -102,23 +112,31 @@ __VstlIterCount	obj_dir/Valu___024root.h	/^    IData\/*31:0*\/ __VstlIterCount;$
 __VstlTriggered	obj_dir/Valu___024root.h	/^    VlTriggerVec<1> __VstlTriggered;$/;"	m	class:Valu___024root	typeref:typename:VlTriggerVec<1>
 __Vtrigrprev__TOP__clk	obj_dir/Valu___024root.h	/^    CData\/*0:0*\/ __Vtrigrprev__TOP__clk;$/;"	m	class:Valu___024root	typeref:typename:CData
 __Vtrigrprev__TOP__rst	obj_dir/Valu___024root.h	/^    CData\/*0:0*\/ __Vtrigrprev__TOP__rst;$/;"	m	class:Valu___024root	typeref:typename:CData
+a	tb_alu.cpp	/^		uint32_t a;$/;"	m	class:AluInTx	typeref:typename:uint32_t	file:
 a_in	alu.sv	/^		input  [WIDTH-1:0]  a_in,$/;"	p	module:alu
 a_in_r	alu.sv	/^	logic  [WIDTH-1:0]  a_in_r;$/;"	r	module:alu
 add	alu.sv	/^		add     = 2'h1,$/;"	c	typedef:operation_t
 add	obj_dir/Valu___024unit.h	/^        add = 1U,$/;"	e	enum:Valu___024unit::operation_t
+add	tb_alu.cpp	/^			add = Valu___024unit::operation_t::add,$/;"	e	enum:AluInTx::Operation	file:
 alu	alu.sv	/^	module alu #($/;"	m
 alu__DOT__a_in_r	obj_dir/Valu___024root.h	/^    CData\/*5:0*\/ alu__DOT__a_in_r;$/;"	m	class:Valu___024root	typeref:typename:CData
 alu__DOT__b_in_r	obj_dir/Valu___024root.h	/^    CData\/*5:0*\/ alu__DOT__b_in_r;$/;"	m	class:Valu___024root	typeref:typename:CData
 alu__DOT__in_valid_r	obj_dir/Valu___024root.h	/^    CData\/*0:0*\/ alu__DOT__in_valid_r;$/;"	m	class:Valu___024root	typeref:typename:CData
 alu__DOT__op_in_r	obj_dir/Valu___024root.h	/^    CData\/*1:0*\/ alu__DOT__op_in_r;$/;"	m	class:Valu___024root	typeref:typename:CData
 alu__DOT__result	obj_dir/Valu___024root.h	/^    CData\/*5:0*\/ alu__DOT__result;$/;"	m	class:Valu___024root	typeref:typename:CData
+b	tb_alu.cpp	/^		uint32_t b;$/;"	m	class:AluInTx	typeref:typename:uint32_t	file:
 b_in	alu.sv	/^		input  [WIDTH-1:0]  b_in,$/;"	p	module:alu
 b_in_r	alu.sv	/^	logic  [WIDTH-1:0]  b_in_r;$/;"	r	module:alu
 build	Makefile	/^build: obj_dir\/Valu$/;"	t
 check_out_valid	tb_alu.cpp	/^void check_out_valid(Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
 clean	Makefile	/^clean:$/;"	t
 clk	alu.sv	/^		input clk,$/;"	p	module:alu
+count	tb_alu.cpp	/^uint32_t count = 0;$/;"	v	typeref:typename:uint32_t
 default	obj_dir/Valu.mk	/^default: Valu$/;"	t
+drive	tb_alu.cpp	/^		void drive(AluInTx *tx){$/;"	f	class:AluInDrv	typeref:typename:void	file:
+dut	tb_alu.cpp	/^		Valu *dut;$/;"	m	class:AluInDrv	typeref:typename:Valu *	file:
+dut	tb_alu.cpp	/^		Valu *dut;$/;"	m	class:AluInMon	typeref:typename:Valu *	file:
+dut	tb_alu.cpp	/^		Valu *dut;$/;"	m	class:AluOutMon	typeref:typename:Valu *	file:
 dut_reset	tb_alu.cpp	/^void dut_reset (Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
 eval	obj_dir/Valu.h	/^    void eval() { eval_step(); }$/;"	f	class:VL_NOT_FINAL	typeref:typename:void
 eval_end_step	obj_dir/Valu.h	/^    void eval_end_step() {}$/;"	f	class:VL_NOT_FINAL	typeref:typename:void
@@ -127,31 +145,41 @@ eventsPending	obj_dir/Valu.cpp	/^bool Valu::eventsPending() { return false; }$/;
 files.watcherExclude	.vscode/settings.json	/^    "files.watcherExclude": {$/;"	o
 final	obj_dir/Valu.cpp	/^VL_ATTR_COLD void Valu::final() {$/;"	f	class:Valu	typeref:typename:VL_ATTR_COLD void
 hierName	obj_dir/Valu.cpp	/^const char* Valu::hierName() const { return vlSymsp->name(); }$/;"	f	class:Valu	typeref:typename:const char *
+in_q	tb_alu.cpp	/^		std::deque<AluInTx*> in_q; \/\/ create a queue$/;"	m	class:AluScb	typeref:typename:std::deque<AluInTx * >	file:
 in_valid	alu.sv	/^		input               in_valid,$/;"	p	module:alu
 in_valid_r	alu.sv	/^	logic               in_valid_r;$/;"	r	module:alu
 lint	Makefile	/^lint: $(MODULE).sv$/;"	t
 main	tb_alu.cpp	/^int main(int argc, char** argv, char** env) {$/;"	f	typeref:typename:int
 modelName	obj_dir/Valu.cpp	/^const char* Valu::modelName() const { return "Valu"; }$/;"	f	class:Valu	typeref:typename:const char *
+moniter	tb_alu.cpp	/^		void moniter(){$/;"	f	class:AluOutMon	typeref:typename:void	file:
+monitor	tb_alu.cpp	/^		void monitor(){  $/;"	f	class:AluInMon	typeref:typename:void	file:
 name	obj_dir/Valu.cpp	/^const char* Valu::name() const {$/;"	f	class:Valu	typeref:typename:const char *
 name	obj_dir/Valu__Syms.h	/^    const char* name() { return TOP.name(); }$/;"	f	class:Valu__Syms	typeref:typename:const char *
 nextTimeSlot	obj_dir/Valu.cpp	/^uint64_t Valu::nextTimeSlot() {$/;"	f	class:Valu	typeref:typename:uint64_t
 nop	alu.sv	/^		nop     = 2'h0$/;"	c	typedef:operation_t
 nop	obj_dir/Valu___024unit.h	/^        nop = 0U$/;"	e	enum:Valu___024unit::operation_t
+nop	tb_alu.cpp	/^			nop = Valu___024unit::operation_t::nop$/;"	e	enum:AluInTx::Operation	file:
+op	tb_alu.cpp	/^		} op; \/\/ define the op element for interface$/;"	m	class:AluInTx	typeref:enum:AluInTx::Operation	file:
 op_in	alu.sv	/^		input  operation_t  op_in,$/;"	p	module:alu
 op_in_r	alu.sv	/^	operation_t  op_in_r;$/;"	r	module:alu
 operation_t	alu.sv	/^	} operation_t \/*verilator public*\/;$/;"	T
 operation_t	obj_dir/Valu___024unit.h	/^    enum operation_t {$/;"	g	class:Valu___024unit
 out	alu.sv	/^		output logic [WIDTH-1:0]  out,$/;"	p	module:alu
+out	tb_alu.cpp	/^		uint32_t out;$/;"	m	class:AluOutTx	typeref:typename:uint32_t	file:
 out_valid	alu.sv	/^		output logic              out_valid$/;"	p	module:alu
 posedge_cnt	tb_alu.cpp	/^vluint64_t posedge_cnt = 0;$/;"	v	typeref:typename:vluint64_t
 result	alu.sv	/^	logic  [WIDTH-1:0]  result;$/;"	r	module:alu
+rndAluInTx	tb_alu.cpp	/^AluInTx* rndAluInTx(){$/;"	f	typeref:typename:AluInTx *
 rootp	obj_dir/Valu.h	/^    Valu___024root* const rootp;$/;"	m	class:VL_NOT_FINAL	typeref:typename:Valu___024root * const
 rst	alu.sv	/^		input rst,$/;"	p	module:alu
+scb	tb_alu.cpp	/^		AluScb *scb;$/;"	m	class:AluInMon	typeref:typename:AluScb *	file:
+scb	tb_alu.cpp	/^		AluScb *scb;$/;"	m	class:AluOutMon	typeref:typename:AluScb *	file:
 set_rnd_out_valid	tb_alu.cpp	/^void set_rnd_out_valid(Valu *dut, vluint64_t &sim_time){$/;"	f	typeref:typename:void
 sim	Makefile	/^sim: waveform.vcd$/;"	t
 sim_time	tb_alu.cpp	/^vluint64_t sim_time = 0;$/;"	v	typeref:typename:vluint64_t
 sub	alu.sv	/^		sub     = 2'h2,$/;"	c	typedef:operation_t
 sub	obj_dir/Valu___024unit.h	/^        sub = 2U,$/;"	e	enum:Valu___024unit::operation_t
+sub	tb_alu.cpp	/^			sub = Valu___024unit::operation_t::sub,$/;"	e	enum:AluInTx::Operation	file:
 tb_alu.o	obj_dir/Valu.mk	/^tb_alu.o: tb_alu.cpp$/;"	t
 threads	obj_dir/Valu.cpp	/^unsigned Valu::threads() const { return 1; }$/;"	f	class:Valu	typeref:typename:unsigned
 trace	obj_dir/Valu.cpp	/^VL_ATTR_COLD void Valu::trace(VerilatedVcdC* tfp, int levels, int options) {$/;"	f	class:Valu	typeref:typename:VL_ATTR_COLD void
@@ -164,6 +192,8 @@ vlSymsp	obj_dir/Valu___024root.h	/^    Valu__Syms* const vlSymsp;$/;"	m	class:Va
 vlSymsp	obj_dir/Valu___024unit.h	/^    Valu__Syms* const vlSymsp;$/;"	m	class:Valu___024unit	typeref:typename:Valu__Syms * const
 waveform.vcd	Makefile	/^waveform.vcd: .\/obj_dir\/V$(MODULE)$/;"	t
 waves	Makefile	/^waves: waveform.vcd$/;"	t
+writeIn	tb_alu.cpp	/^		void writeIn(AluInTx *tx){$/;"	f	class:AluScb	typeref:typename:void	file:
+writeOut	tb_alu.cpp	/^		void writeOut(AluOutTx* tx){$/;"	f	class:AluScb	typeref:typename:void	file:
 ~Valu	obj_dir/Valu.cpp	/^Valu::~Valu() {$/;"	f	class:Valu
 ~Valu__Syms	obj_dir/Valu__Syms.cpp	/^Valu__Syms::~Valu__Syms()$/;"	f	class:Valu__Syms
 ~Valu___024root	obj_dir/Valu___024root__Slow.cpp	/^Valu___024root::~Valu___024root() {$/;"	f	class:Valu___024root

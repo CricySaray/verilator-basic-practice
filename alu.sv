@@ -32,7 +32,7 @@
 	logic               in_valid_r;
 	logic  [WIDTH-1:0]  result;
 
-	// Register all inputs
+	// Register all inputs: always_ff keyword is used to define a synchronous procedural block.
 	always_ff @ (posedge clk, posedge rst) begin
 		if (rst) begin
 			op_in_r     <= nop;
@@ -47,7 +47,7 @@
 		end
 	end
 
-	// Compute the result
+	// Compute the result: always_comb keyword is used to define a combinational procedural block.
 	always_comb begin
 		result = '0;
 		if (in_valid_r) begin
