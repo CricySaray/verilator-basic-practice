@@ -1,3 +1,6 @@
+// Modern Transactional (UVM) style C++ testbench
+// URL: https://itsembedded.com/dhd/verilator_4/#aluinmon-input-interface-monitor
+
 // Verilator Example
 // Norbertas Kremeris 2021
 #include <cstddef>
@@ -295,6 +298,7 @@ int main(int argc, char** argv, char** env) {
 				// NOTE: the writeOut function is inside
 				outMon->moniter();
 			}
+
 		}
 		// end of positive edge processing
 
