@@ -1,7 +1,7 @@
 MODULE=alu
 
 .PHONY: sim
-sim: waveform.vcd
+sim: waveform.vcd tree
 
 .PHONY: verilate
 verilate: .stamp.verilate
@@ -31,6 +31,12 @@ waveform.vcd: ./obj_dir/V$(MODULE)
 	verilator -Wall --trace --x-assign unique --x-initial unique -cc $(MODULE).sv --exe tb_$(MODULE).cpp
 	@touch .stamp.verilate
 
+tree:
+	@echo 
+	@echo "### GENERATING DEPENDENCY TREE ###"
+	makefile2graph | dot -Tsvg -o dependency_tree_$(MODULE).svg
+	@echo "Successfully generate the tree of dependency of Makefile."
+
 .PHONY: lint
 lint: $(MODULE).sv
 	verilator --lint-only $(MODULE).sv
@@ -40,4 +46,5 @@ clean:
 	rm -rf .stamp.*;
 	rm -rf ./obj_dir
 	rm -rf waveform.vcd
+	rm -rf *.svg
 
